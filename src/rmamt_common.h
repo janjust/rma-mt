@@ -46,7 +46,8 @@ typedef volatile long atomic_long;
 
 #endif
 
-#define RMAMT_WARMUP_ITERATIONS 32
+// #define RMAMT_WARMUP_ITERATIONS 32
+#define RMAMT_WARMUP_ITERATIONS 0
 
 typedef struct arg_struct {
     MPI_Win win;

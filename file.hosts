@@ -1,0 +1,3 @@
+a=20
+b=21
+hosts="jazz${a}:1,jazz${b}:1"

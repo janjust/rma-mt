@@ -80,6 +80,9 @@ static uint64_t barrier_time;
 
 int main(int argc,char *argv[])
 {
+    printf ("At %s, pid = %d\n", __FUNCTION__, getpid());
+    sleep(15);
+
     MPI_Comm test_comm, leader_comm;
     MPI_Group group = MPI_GROUP_NULL, comm_group;
     int nprocs, provided, rank, rc;
@@ -343,6 +346,7 @@ int main(int argc,char *argv[])
 }
 
 static void *runfunc_pscw (ArgStruct* a) {
+    printf ("%s\n", __FUNCTION__);
     MPI_Win twin = a->win;
     size_t max_size = a->max_size;
     size_t min_size = a->min_size;
@@ -360,6 +364,7 @@ static void *runfunc_pscw (ArgStruct* a) {
 }
 
 static void *runfunc_fence (ArgStruct* a) {
+    printf ("%s\n", __FUNCTION__);
     MPI_Win twin = a->win;
     size_t max_size = a->max_size;
     size_t min_size = a->min_size;
